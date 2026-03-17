@@ -1,5 +1,9 @@
+from ui.app import SetApp
+
+
 def main():
-    print("Hello from set-tui!")
+    app = SetApp()
+    app.run()
 
 
 if __name__ == "__main__":
