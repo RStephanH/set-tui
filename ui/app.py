@@ -38,6 +38,7 @@ from core.operations import (
     is_injective,
     is_surjective,
     is_bijective,
+    parse_input,
 )
 from storage.json_store import (
     load,
@@ -425,8 +426,8 @@ class SetApp(App):
             if not raw_a:
                 raise ValueError("L'ensemble A est vide.")
 
-            A = set(map(int, raw_a.split()))
-            B = set(map(int, raw_b.split())) if raw_b else set()
+            A = parse_input(raw_a)
+            B = parse_input(raw_b) if raw_b else set()
 
             b_used = B
             res = None
@@ -496,8 +497,8 @@ class SetApp(App):
     def _handle_appli(self) -> None:
         result_widget = self.query_one("#f-result", Static)
         try:
-            A = set(map(int, self.query_one("#f-A", Input).value.split()))
-            B = set(map(int, self.query_one("#f-B", Input).value.split()))
+            A = parse_input(self.query_one("#f-A", Input).value)
+            B = parse_input(self.query_one("#f-B", Input).value)
             formula = self.query_one("#f-formula", Input).value.strip()
             raw_s = self.query_one("#f-S", Input).value.strip()
             raw_t = self.query_one("#f-T", Input).value.strip()
@@ -507,8 +508,8 @@ class SetApp(App):
             if not formula:
                 raise ValueError("La formule est vide.")
 
-            S = set(map(int, raw_s.split())) if raw_s else A
-            T = set(map(int, raw_t.split())) if raw_t else B
+            S = parse_input(raw_s) if raw_s else A
+            T = parse_input(raw_t) if raw_t else B
 
             f = build_function(A, formula)
 
@@ -548,7 +549,7 @@ class SetApp(App):
                 raw = self.query_one("#sets-elements", Input).value.strip()
                 if not raw:
                     raise ValueError("L'ensemble est vide.")
-                elements = set(map(int, raw.split()))
+                elements = parse_input(raw)
                 save_named_set(self.data, name, elements)
                 save(self.data)
                 self._refresh_sets_table()
