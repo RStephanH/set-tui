@@ -4,12 +4,39 @@ core/operations.py
 Algèbre & Théorie des Ensembles — toutes les opérations
 
 PLAN DU FICHIER :
+  0. Utilitaires de parsing     (parse_input)
   1. Opérations de base          (union, intersection, différence...)
   2. Opérations avancées         (complémentaire, ensemble des parties)
   3. Ensemble par compréhension  (build_set_by_comprehension)
   4. Applications  f : A → B     (build_function, image, injectivité...)
 ══════════════════════════════════════════════════════════════════
 """
+
+
+# ══════════════════════════════════════════════════════════════
+#  0. UTILITAIRES
+# ══════════════════════════════════════════════════════════════
+
+def parse_input(raw_str: str) -> set:
+    """
+    Parse input by trying int first, falling back to strings.
+    
+    Splits by whitespace and attempts to convert each element to int.
+    If an element can't be converted to int, treats all elements as strings.
+    
+    Examples:
+        "1 2 3"     → {1, 2, 3}  (integers)
+        "a b c"     → {'a', 'b', 'c'}  (strings)
+        "1 a 3"     → {'1', 'a', '3'}  (mixed → all strings)
+    """
+    elements = raw_str.split()
+    if not elements:
+        return set()
+    
+    try:
+        return set(map(int, elements))
+    except ValueError:
+        return set(elements)
 
 
 # ══════════════════════════════════════════════════════════════
