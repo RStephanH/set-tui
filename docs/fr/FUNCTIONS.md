@@ -24,7 +24,7 @@ Une **fonction** (ou **application**) f: A → B est une règle qui associe à c
 
 ### Notation
 
-```
+```text
 f: A → B
 x ↦ f(x)
 ```
@@ -36,23 +36,23 @@ Lire comme: "f est une fonction de A vers B qui envoie x à f(x)"
 Les fonctions peuvent être représentées comme:
 
 **Paires ordonnées:**
-```
+```text
 f = {(1, 2), (2, 4), (3, 6), (4, 8)}
 ```
 
 **Tableau:**
-```
+```text
 x  | 1  2  3  4
 f(x)| 2  4  6  8
 ```
 
 **Formule:**
-```
+```text
 f(x) = 2x
 ```
 
 **Analogie de machine:**
-```
+```text
 Entrée (x) → [f] → Sortie (f(x))
 ```
 
@@ -62,7 +62,7 @@ Entrée (x) → [f] → Sortie (f(x))
 
 ### Domaine et codomaine
 
-```
+```text
 f: A → B
 ```
 
@@ -73,19 +73,19 @@ f: A → B
 ### Exemples
 
 **Fonction linéaire:**
-```
+```text
 f: ℝ → ℝ
 f(x) = 2x + 1
 ```
 
 **Fonction carrée:**
-```
+```text
 f: ℤ → ℤ
 f(x) = x²
 ```
 
 **Fonction modulo:**
-```
+```text
 f: ℤ → {0, 1, 2}
 f(x) = x mod 3
 ```
@@ -98,7 +98,7 @@ f(x) = x mod 3
 
 L'ensemble de toutes les entrées possibles.
 
-```
+```text
 f: A → B
 Domaine de f = A
 ```
@@ -109,7 +109,7 @@ Tous les éléments doivent avoir une valeur de fonction assignée.
 
 L'ensemble où les sorties sont censées venir (déclaré dans la définition de la fonction).
 
-```
+```text
 f: A → B
 Codomaine de f = B
 ```
@@ -120,7 +120,7 @@ Pas tous les éléments de B ont besoin d'être atteints!
 
 L'ensemble de toutes les valeurs de sortie réelles (éléments de B qui SONT atteints).
 
-```
+```text
 Image(f) = f(A) = {f(x) | x ∈ A}
 ```
 
@@ -128,7 +128,7 @@ Image(f) = f(A) = {f(x) | x ∈ A}
 
 ### Exemple
 
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16, 25}
 f(x) = x²
 
@@ -147,7 +147,7 @@ Remarque: Image ⊂ Codomaine (sous-ensemble strict!)
 
 **Définition:** Une fonction est **injective** si des entrées différentes produisent toujours des sorties différentes.
 
-```
+```text
 f est injective  ⟺  f(x₁) = f(x₂) ⟹ x₁ = x₂
 
 Ou équivalemment:  x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂)
@@ -158,13 +158,13 @@ Ou équivalemment:  x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂)
 **Exemples:**
 
 ✓ **Injective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 Si f(x₁) = f(x₂), alors 2x₁ + 1 = 2x₂ + 1, donc x₁ = x₂
 ```
 
 ✗ **Non injective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 f(-2) = 4 et f(2) = 4, mais -2 ≠ 2
 Deux entrées différentes donnent la même sortie!
@@ -174,7 +174,7 @@ Deux entrées différentes donnent la même sortie!
 
 **Définition:** Une fonction est **surjective** si chaque élément du codomaine est atteint par au moins une entrée.
 
-```
+```text
 f est surjective  ⟺  f(A) = B
                   ⟺  ∀y ∈ B, ∃x ∈ A: f(x) = y
 ```
@@ -184,14 +184,14 @@ f est surjective  ⟺  f(A) = B
 **Exemples:**
 
 ✓ **Surjective:**
-```
+```text
 f: ℤ → {0, 1, 2},  f(x) = x mod 3
 Chaque élément {0, 1, 2} est atteint:
   f(0) = 0, f(1) = 1, f(2) = 2
 ```
 
 ✗ **Non surjective:**
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16, 25},  f(x) = x²
 Image = {1, 4, 9}
 Les éléments 16 et 25 ne sont jamais atteints!
@@ -201,21 +201,21 @@ Les éléments 16 et 25 ne sont jamais atteints!
 
 **Définition:** Une fonction est **bijective** si elle est à la fois injective ET surjective.
 
-```
+```text
 f est bijective  ⟺  f est injective ET f est surjective
 ```
 
 **Intuition:** Un appariement parfait entre le domaine et le codomaine. Chaque entrée est associée à une sortie unique, et chaque sortie vient d'exactement une entrée.
 
 **Conséquence importante:**
-```
+```text
 Si f: A → B est bijective, alors |A| = |B|
 ```
 
 **Exemple:**
 
 ✓ **Bijective:**
-```
+```text
 f: {1, 2, 3} → {a, b, c}
 f(1) = a
 f(2) = b
@@ -225,7 +225,7 @@ C'est bijective: correspondance parfaite one-to-one
 ```
 
 ✓ **Bijective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 - Injective: f(x₁) = f(x₂) ⟹ x₁ = x₂ ✓
 - Surjective: pour n'importe quel y, nous pouvons trouver x = (y-1)/2 ✓
@@ -245,7 +245,7 @@ f: ℝ → ℝ,  f(x) = 2x + 1
 
 ### Fonction identité
 
-```
+```text
 f: A → A
 f(x) = x
 
@@ -259,7 +259,7 @@ Chaque élément est associé à lui-même.
 
 ### Fonction constante
 
-```
+```text
 f: A → B
 f(x) = c  (pour un c ∈ B fixé)
 
@@ -267,7 +267,7 @@ Chaque élément est associé à la même sortie.
 ```
 
 **Exemple:**
-```
+```text
 f: {1, 2, 3} → {5}
 f(x) = 5
 ```
@@ -279,7 +279,7 @@ f(x) = 5
 
 ### Composition de fonctions
 
-```
+```text
 f: A → B
 g: B → C
 g ∘ f: A → C
@@ -290,7 +290,7 @@ g ∘ f: A → C
 Lire comme: "g rond f" ou "g après f"
 
 **Exemple:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x + 1
 g: ℝ → ℝ,  g(x) = x²
 
@@ -306,7 +306,7 @@ g(3) = 9
 
 Une fonction f a une **inverse** f⁻¹: B → A si et seulement si f est **bijective**.
 
-```
+```text
 f: A → B est bijective
 ⟹ ∃ f⁻¹: B → A telle que:
   f⁻¹(f(x)) = x  pour tous x ∈ A
@@ -314,7 +314,7 @@ f: A → B est bijective
 ```
 
 **Exemple:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 f⁻¹: ℝ → ℝ,  f⁻¹(y) = (y - 1)/2
 
@@ -331,12 +331,12 @@ f(f⁻¹(5)) = f(2) = 5 ✓
 
 Pour S ⊆ A, l'**image directe** f(S) est l'ensemble de toutes les sorties quand les entrées viennent de S.
 
-```
+```text
 f(S) = {f(x) | x ∈ S}
 ```
 
 **Exemple:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 S = {-2, -1, 0, 1, 2}
 
@@ -348,14 +348,14 @@ Remarque: f(-2) = f(2) = 4, donc 4 n'apparaît qu'une fois dans f(S)
 
 Pour T ⊆ B, l'**image inverse** (ou **préimage**) f⁻¹(T) est l'ensemble de toutes les entrées qui sont associées à des éléments dans T.
 
-```
+```text
 f⁻¹(T) = {x ∈ A | f(x) ∈ T}
 ```
 
 **Important:** f⁻¹(T) est un ENSEMBLE, pas nécessairement une fonction!
 
 **Exemple:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 T = {4}
 
@@ -371,12 +371,12 @@ Remarque: Deux entrées différentes sont associées à 4!
 
 Le nombre de fonctions différentes de A vers B est:
 
-```
+```text
 |fonctions de A vers B| = |B|^|A|
 ```
 
 **Exemple:**
-```
+```text
 A = {1, 2},  B = {a, b, c}
 Nombre de fonctions = 3² = 9
 
@@ -396,7 +396,7 @@ f₉(1)=c, f₉(2)=c
 
 Le nombre de fonctions injectives de A vers B est:
 
-```
+```text
 |fonctions injectives| = |B| × (|B|-1) × (|B|-2) × ... × (|B|-|A|+1)
                        = P(|B|, |A|)  (permutation)
 ```
@@ -407,14 +407,14 @@ Le nombre de fonctions injectives de A vers B est:
 
 Le nombre de fonctions bijectives de A vers B est:
 
-```
+```text
 |fonctions bijectives| = |A|!   (factorielle)
 ```
 
 **Requiert:** |A| = |B|
 
 **Exemple:**
-```
+```text
 A = {1, 2, 3},  B = {a, b, c}
 Nombre de bijections = 3! = 6
 ```

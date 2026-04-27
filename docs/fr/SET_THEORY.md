@@ -17,6 +17,8 @@
 
 Un **ensemble** est une collection bien définie d'objets distincts (appelés **éléments** ou **membres**).
 
+Dans ce document, nous utilisons la convention **ℕ = {0, 1, 2, 3, ...}**.
+
 ### Caractéristiques clés
 
 1. **Distincts**: Pas de doublons. {1, 2, 2, 3} = {1, 2, 3}
@@ -35,14 +37,14 @@ Un **ensemble** est une collection bien définie d'objets distincts (appelés **
 ## Notation des ensembles
 
 ### Énumération des éléments (Forme explicite)
-```
+```text
 A = {1, 2, 3, 4, 5}
 B = {pomme, orange, banane}
 C = {rouge, vert, bleu}
 ```
 
 ### Notation en compréhension (Forme implicite)
-```
+```text
 A = {x | x est un entier positif inférieur à 6}
 B = {x ∈ ℕ | x est pair}
 C = {x ∈ ℝ | x² < 10}
@@ -54,11 +56,17 @@ Lire comme: "A est l'ensemble de tous les x tels que..."
 - `x ∈ A` : x est un élément de A (x appartient à A)
 - `x ∉ A` : x n'est pas un élément de A
 
+### Appartenance (∈) vs sous-ensemble (⊆)
+- `x ∈ A` compare un **élément** à un ensemble.
+- `X ⊆ A` compare un **ensemble** à un autre ensemble.
+
+Exemple: `2 ∈ {1, 2, 3}` est vrai, tandis que `{2} ∈ {1, 2, 3}` est faux ; l'écriture correcte est `{2} ⊆ {1, 2, 3}`.
+
 ### Cardinalité
 - `|A|` : le nombre d'éléments de A (cardinalité de A)
 
 **Exemple:**
-```
+```text
 A = {1, 2, 3}
 |A| = 3
 
@@ -78,7 +86,7 @@ C = {a, b, c, d, e}
 
 Tout élément de A est aussi dans B.
 
-```
+```text
 A ⊆ B  ⟺  ∀x: (x ∈ A ⟹ x ∈ B)
 ```
 
@@ -93,7 +101,7 @@ A ⊆ B  ⟺  ∀x: (x ∈ A ⟹ x ∈ B)
 
 A ⊆ B ET A ≠ B (A est strictement plus petit que B)
 
-```
+```text
 A ⊂ B  ⟺  (A ⊆ B  ∧  A ≠ B)
 ```
 
@@ -106,7 +114,7 @@ A ⊂ B  ⟺  (A ⊆ B  ∧  A ≠ B)
 
 A et B ont exactement les mêmes éléments.
 
-```
+```text
 A = B  ⟺  (A ⊆ B  ∧  B ⊆ A)
 ```
 
@@ -120,7 +128,7 @@ A = B  ⟺  (A ⊆ B  ∧  B ⊆ A)
 Deux ensembles sont disjoints s'ils n'ont aucun élément en commun.
 
 **Exemple:**
-```
+```text
 A = {1, 2, 3}
 B = {4, 5, 6}
 A ∩ B = ∅  → disjoints ✓
@@ -130,7 +138,7 @@ A ∩ B = ∅  → disjoints ✓
 Deux ensembles se chevauchent s'ils partagent au moins un élément.
 
 **Exemple:**
-```
+```text
 A = {1, 2, 3}
 B = {3, 4, 5}
 A ∩ B = {3}  → chevauchement ✓
@@ -178,7 +186,7 @@ Pour les ensembles A, B et l'ensemble universel U:
 
 L'ensemble ne contenant aucun élément.
 
-```
+```text
 ∅ = {} = {x | x ≠ x}
 |∅| = 0
 ```
@@ -195,12 +203,12 @@ L'ensemble contenant tous les éléments considérés dans un contexte particuli
 
 **Exemple:**
 Si nous travaillons avec les chiffres:
-```
+```text
 U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 ```
 
 Si nous travaillons avec les lettres:
-```
+```text
 U = {a, b, c, ..., z}
 ```
 

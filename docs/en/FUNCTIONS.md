@@ -24,7 +24,7 @@ A **function** (or **application**) f: A → B is a rule that assigns to each el
 
 ### Notation
 
-```
+```text
 f: A → B
 x ↦ f(x)
 ```
@@ -36,23 +36,23 @@ Read as: "f is a function from A to B that sends x to f(x)"
 Functions can be represented as:
 
 **Ordered pairs:**
-```
+```text
 f = {(1, 2), (2, 4), (3, 6), (4, 8)}
 ```
 
 **Table:**
-```
+```text
 x  | 1  2  3  4
 f(x)| 2  4  6  8
 ```
 
 **Formula:**
-```
+```text
 f(x) = 2x
 ```
 
 **Machine analogy:**
-```
+```text
 Input (x) → [f] → Output (f(x))
 ```
 
@@ -62,7 +62,7 @@ Input (x) → [f] → Output (f(x))
 
 ### Domain & Codomain
 
-```
+```text
 f: A → B
 ```
 
@@ -73,19 +73,19 @@ f: A → B
 ### Examples
 
 **Linear function:**
-```
+```text
 f: ℝ → ℝ
 f(x) = 2x + 1
 ```
 
 **Squaring function:**
-```
+```text
 f: ℤ → ℤ
 f(x) = x²
 ```
 
 **Modulo function:**
-```
+```text
 f: ℤ → {0, 1, 2}
 f(x) = x mod 3
 ```
@@ -98,7 +98,7 @@ f(x) = x mod 3
 
 The set of all possible inputs.
 
-```
+```text
 f: A → B
 Domain of f = A
 ```
@@ -109,7 +109,7 @@ All elements must have a function value assigned.
 
 The set where outputs are supposed to come from (declared in the function definition).
 
-```
+```text
 f: A → B
 Codomain of f = B
 ```
@@ -120,7 +120,7 @@ Not all elements of B need to be reached!
 
 The set of all actual output values (elements of B that ARE reached).
 
-```
+```text
 Image(f) = f(A) = {f(x) | x ∈ A}
 ```
 
@@ -128,7 +128,7 @@ Image(f) = f(A) = {f(x) | x ∈ A}
 
 ### Example
 
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16, 25}
 f(x) = x²
 
@@ -147,7 +147,7 @@ Notice: Image ⊂ Codomain (proper subset!)
 
 **Definition:** A function is **injective** if different inputs always produce different outputs.
 
-```
+```text
 f is injective  ⟺  f(x₁) = f(x₂) ⟹ x₁ = x₂
 
 Or equivalently:  x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂)
@@ -158,13 +158,13 @@ Or equivalently:  x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂)
 **Examples:**
 
 ✓ **Injective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 If f(x₁) = f(x₂), then 2x₁ + 1 = 2x₂ + 1, so x₁ = x₂
 ```
 
 ✗ **Not injective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 f(-2) = 4 and f(2) = 4, but -2 ≠ 2
 Two different inputs give the same output!
@@ -174,7 +174,7 @@ Two different inputs give the same output!
 
 **Definition:** A function is **surjective** if every element in the codomain is reached by at least one input.
 
-```
+```text
 f is surjective  ⟺  f(A) = B
                  ⟺  ∀y ∈ B, ∃x ∈ A: f(x) = y
 ```
@@ -184,14 +184,14 @@ f is surjective  ⟺  f(A) = B
 **Examples:**
 
 ✓ **Surjective:**
-```
+```text
 f: ℤ → {0, 1, 2},  f(x) = x mod 3
 Every element {0, 1, 2} is reached:
   f(0) = 0, f(1) = 1, f(2) = 2
 ```
 
 ✗ **Not surjective:**
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16, 25},  f(x) = x²
 Image = {1, 4, 9}
 Elements 16 and 25 are never reached!
@@ -201,21 +201,21 @@ Elements 16 and 25 are never reached!
 
 **Definition:** A function is **bijective** if it is both injective AND surjective.
 
-```
+```text
 f is bijective  ⟺  f is injective AND f is surjective
 ```
 
 **Intuition:** A perfect pairing between domain and codomain. Every input maps to a unique output, and every output comes from exactly one input.
 
 **Important consequence:**
-```
+```text
 If f: A → B is bijective, then |A| = |B|
 ```
 
 **Example:**
 
 ✓ **Bijective:**
-```
+```text
 f: {1, 2, 3} → {a, b, c}
 f(1) = a
 f(2) = b
@@ -225,7 +225,7 @@ This is bijective: perfect one-to-one correspondence
 ```
 
 ✓ **Bijective:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 - Injective: f(x₁) = f(x₂) ⟹ x₁ = x₂ ✓
 - Surjective: for any y, we can find x = (y-1)/2 ✓
@@ -245,7 +245,7 @@ f: ℝ → ℝ,  f(x) = 2x + 1
 
 ### Identity Function
 
-```
+```text
 f: A → A
 f(x) = x
 
@@ -259,7 +259,7 @@ Every element maps to itself.
 
 ### Constant Function
 
-```
+```text
 f: A → B
 f(x) = c  (for some fixed c ∈ B)
 
@@ -267,7 +267,7 @@ Every element maps to the same output.
 ```
 
 **Example:**
-```
+```text
 f: {1, 2, 3} → {5}
 f(x) = 5
 ```
@@ -279,7 +279,7 @@ f(x) = 5
 
 ### Composition of Functions
 
-```
+```text
 f: A → B
 g: B → C
 g ∘ f: A → C
@@ -290,7 +290,7 @@ g ∘ f: A → C
 Read as: "g circle f" or "g after f"
 
 **Example:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x + 1
 g: ℝ → ℝ,  g(x) = x²
 
@@ -306,7 +306,7 @@ g(3) = 9
 
 A function f has an **inverse** f⁻¹: B → A if and only if f is **bijective**.
 
-```
+```text
 f: A → B is bijective
 ⟹ ∃ f⁻¹: B → A such that:
   f⁻¹(f(x)) = x  for all x ∈ A
@@ -314,7 +314,7 @@ f: A → B is bijective
 ```
 
 **Example:**
-```
+```text
 f: ℝ → ℝ,  f(x) = 2x + 1
 f⁻¹: ℝ → ℝ,  f⁻¹(y) = (y - 1)/2
 
@@ -331,12 +331,12 @@ f(f⁻¹(5)) = f(2) = 5 ✓
 
 For S ⊆ A, the **direct image** f(S) is the set of all outputs when inputs come from S.
 
-```
+```text
 f(S) = {f(x) | x ∈ S}
 ```
 
 **Example:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 S = {-2, -1, 0, 1, 2}
 
@@ -348,14 +348,14 @@ Note: f(-2) = f(2) = 4, so 4 appears only once in f(S)
 
 For T ⊆ B, the **inverse image** (or **preimage**) f⁻¹(T) is the set of all inputs that map to elements in T.
 
-```
+```text
 f⁻¹(T) = {x ∈ A | f(x) ∈ T}
 ```
 
 **Important:** f⁻¹(T) is a SET, not necessarily a function!
 
 **Example:**
-```
+```text
 f: ℝ → ℝ,  f(x) = x²
 T = {4}
 
@@ -371,12 +371,12 @@ Note: Two different inputs both map to 4!
 
 The number of different functions from A to B is:
 
-```
+```text
 |functions from A to B| = |B|^|A|
 ```
 
 **Example:**
-```
+```text
 A = {1, 2},  B = {a, b, c}
 Number of functions = 3² = 9
 
@@ -396,7 +396,7 @@ f₉(1)=c, f₉(2)=c
 
 The number of injective functions from A to B is:
 
-```
+```text
 |injective functions| = |B| × (|B|-1) × (|B|-2) × ... × (|B|-|A|+1)
                       = P(|B|, |A|)  (permutation)
 ```
@@ -407,14 +407,14 @@ The number of injective functions from A to B is:
 
 The number of bijective functions from A to B is:
 
-```
+```text
 |bijective functions| = |A|!   (factorial)
 ```
 
 **Requirement:** |A| = |B|
 
 **Example:**
-```
+```text
 A = {1, 2, 3},  B = {a, b, c}
 Number of bijections = 3! = 6
 ```

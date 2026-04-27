@@ -17,6 +17,8 @@
 
 A **set** is a well-defined collection of distinct objects (called **elements** or **members**).
 
+In this document, we use the convention **ℕ = {0, 1, 2, 3, ...}**.
+
 ### Key Characteristics
 
 1. **Distinct**: No duplicates. {1, 2, 2, 3} = {1, 2, 3}
@@ -35,14 +37,14 @@ A **set** is a well-defined collection of distinct objects (called **elements** 
 ## Set Notation
 
 ### Listing Elements (Explicit Form)
-```
+```text
 A = {1, 2, 3, 4, 5}
 B = {apple, orange, banana}
 C = {red, green, blue}
 ```
 
 ### Set Builder Notation (Implicit Form)
-```
+```text
 A = {x | x is a positive integer less than 6}
 B = {x ∈ ℕ | x is even}
 C = {x ∈ ℝ | x² < 10}
@@ -54,11 +56,17 @@ Read as: "A is the set of all x such that..."
 - `x ∈ A` : x is an element of A (x belongs to A)
 - `x ∉ A` : x is not an element of A
 
+### Membership (∈) vs Subset (⊆)
+- `x ∈ A` compares an **element** with a set.
+- `X ⊆ A` compares a **set** with another set.
+
+Example: `2 ∈ {1, 2, 3}` is true, while `{2} ∈ {1, 2, 3}` is false; the correct statement is `{2} ⊆ {1, 2, 3}`.
+
 ### Cardinality
 - `|A|` : the number of elements in A (cardinality of A)
 
 **Example:**
-```
+```text
 A = {1, 2, 3}
 |A| = 3
 
@@ -78,7 +86,7 @@ C = {a, b, c, d, e}
 
 Every element of A is also in B.
 
-```
+```text
 A ⊆ B  ⟺  ∀x: (x ∈ A ⟹ x ∈ B)
 ```
 
@@ -93,7 +101,7 @@ A ⊆ B  ⟺  ∀x: (x ∈ A ⟹ x ∈ B)
 
 A ⊆ B AND A ≠ B (A is strictly smaller than B)
 
-```
+```text
 A ⊂ B  ⟺  (A ⊆ B  ∧  A ≠ B)
 ```
 
@@ -106,7 +114,7 @@ A ⊂ B  ⟺  (A ⊆ B  ∧  A ≠ B)
 
 A and B have exactly the same elements.
 
-```
+```text
 A = B  ⟺  (A ⊆ B  ∧  B ⊆ A)
 ```
 
@@ -120,7 +128,7 @@ A = B  ⟺  (A ⊆ B  ∧  B ⊆ A)
 Two sets are disjoint if they have no elements in common.
 
 **Example:**
-```
+```text
 A = {1, 2, 3}
 B = {4, 5, 6}
 A ∩ B = ∅  → disjoint ✓
@@ -130,7 +138,7 @@ A ∩ B = ∅  → disjoint ✓
 Two sets overlap if they share at least one element.
 
 **Example:**
-```
+```text
 A = {1, 2, 3}
 B = {3, 4, 5}
 A ∩ B = {3}  → overlapping ✓
@@ -178,7 +186,7 @@ For sets A, B, and universal set U:
 
 The set containing no elements.
 
-```
+```text
 ∅ = {} = {x | x ≠ x}
 |∅| = 0
 ```
@@ -195,12 +203,12 @@ The set containing all elements under consideration in a particular context.
 
 **Example:**
 If we're working with digits:
-```
+```text
 U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 ```
 
 If we're working with letters:
-```
+```text
 U = {a, b, c, ..., z}
 ```
 
