@@ -9,10 +9,14 @@
 3. [Practice Exercises](#practice-exercises)
 4. [Tips for Success](#tips-for-success)
 5. [Common Mistakes](#common-mistakes)
+6. [Practice Strategy](#practice-strategy)
+7. [Additional Resources](#additional-resources)
 
 ---
 
 ## Getting Started
+
+In this document, we use the convention **ℕ = {0, 1, 2, 3, ...}**.
 
 ### What You'll Learn
 
@@ -51,7 +55,7 @@ Set-TUI helps you understand:
 4. Subset relations
 
 **Practice:**
-```
+```text
 Create sets: A = {1, 2, 3}, B = {3, 4, 5}
 Calculate:
   - A ∪ B (should be {1, 2, 3, 4, 5})
@@ -77,7 +81,7 @@ Calculate:
 5. Set comprehension
 
 **Practice:**
-```
+```text
 Create universe: U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 Create sets: A = {2, 4, 6, 8}, B = {1, 3, 5, 7, 9}
 
@@ -106,7 +110,7 @@ Calculate:
 6. Composition and inverse functions
 
 **Practice:**
-```
+```text
 Define function: f(x) = 2x on domain {1, 2, 3}
 
 Analyze:
@@ -133,7 +137,7 @@ Analyze:
 ### Level 1: Basics
 
 **Exercise 1.1:** Set Notation
-```
+```text
 Write the following sets in explicit form (listing elements):
 a) {x ∈ ℕ | x < 5}
 b) {x ∈ ℤ | -2 < x < 3}
@@ -146,7 +150,7 @@ c) {2, 4, 6, 8, 10}
 ```
 
 **Exercise 1.2:** Basic Operations
-```
+```text
 Let A = {a, b, c}, B = {b, c, d}, C = {c, d, e}
 
 Calculate:
@@ -158,7 +162,7 @@ e) (A ∪ B) ∩ C = {c, d}
 ```
 
 **Exercise 1.3:** Subsets
-```
+```text
 Is the first set a subset of the second?
 a) {1, 2} ⊆ {1, 2, 3}?          Yes
 b) {1, 2, 4} ⊆ {1, 2, 3}?       No
@@ -172,7 +176,7 @@ e) {1, 2, 3} ⊂ {1, 2, 3}?       No (not proper)
 ### Level 2: Intermediate
 
 **Exercise 2.1:** Cartesian Product
-```
+```text
 Let A = {1, 2}, B = {a, b}
 
 a) A × B = {(1,a), (1,b), (2,a), (2,b)}
@@ -182,7 +186,7 @@ d) A × B = B × A? No
 ```
 
 **Exercise 2.2:** Power Sets
-```
+```text
 Find P(A) for A = {1, 2}
 
 P(A) = {∅, {1}, {2}, {1,2}}
@@ -194,7 +198,7 @@ Find P(B) for B = {a, b, c}
 ```
 
 **Exercise 2.3:** Set Comprehension
-```
+```text
 Build the following sets using comprehension:
 
 a) All even integers from 1 to 20
@@ -215,7 +219,7 @@ c) All multiples of 3 up to 30
 ### Level 3: Functions
 
 **Exercise 3.1:** Analyzing Functions
-```
+```text
 Let f: {1, 2, 3} → {1, 2, 3, 4}
      f(1) = 2, f(2) = 4, f(3) = 3
 
@@ -228,7 +232,7 @@ f) Is f bijective? No (not surjective)
 ```
 
 **Exercise 3.2:** Function Formulas
-```
+```text
 Let f: ℝ → ℝ, f(x) = 2x + 1
 
 a) f(0) = 1
@@ -245,7 +249,7 @@ e) Is f bijective?
 ```
 
 **Exercise 3.3:** Image and Preimage
-```
+```text
 Let f: ℝ → ℝ, f(x) = x²
 
 a) Find f({-2, -1, 1, 2})
@@ -268,7 +272,7 @@ d) What is the image of f?
 ### 1. **Start Small**
 Begin with small, concrete sets before moving to abstract ones.
 
-```
+```text
 ✓ Good:   A = {1, 2, 3}
 ✗ Avoid:  A = {all positive integers divisible by 7}
 ```
@@ -276,7 +280,7 @@ Begin with small, concrete sets before moving to abstract ones.
 ### 2. **Use Visualization**
 Draw Venn diagrams to visualize sets and operations.
 
-```
+```text
      A         B
     ┌──┐     ┌──┐
     │ 1│     │ 3│
@@ -288,7 +292,7 @@ Draw Venn diagrams to visualize sets and operations.
 ### 3. **Verify Your Answers**
 Always double-check results by hand.
 
-```
+```text
 A = {1, 2, 3}, B = {3, 4}
 A ∪ B = {1, 2, 3, 4}
 Check: Is 1 in A∪B? Yes (in A) ✓
@@ -300,7 +304,7 @@ Check: Is 1 in A∪B? Yes (in A) ✓
 ### 4. **Understand the "Why"**
 Don't just compute—understand the reasoning behind operations.
 
-```
+```text
 Why is {1, 2} ⊆ {1, 2, 3}?
 Because every element of {1, 2} is also in {1, 2, 3}.
 This matches the definition of subset.
@@ -312,7 +316,7 @@ Use the application to check your manual calculations.
 ### 6. **Work with Multiple Representations**
 See sets in different forms:
 
-```
+```text
 Explicit form:     {1, 2, 3, 4}
 Set-builder:       {x ∈ ℕ | x < 5}
 Interval:          [1, 5) ∩ ℕ
@@ -325,7 +329,7 @@ Predicate:         "x < 5 and x > 0"
 
 ### Mistake 1: Confusing Subset and Element
 
-```
+```text
 ✗ Wrong:  {2} ∈ {1, 2, 3}    (says 2 is IN the set)
 ✓ Right:  {2} ⊆ {1, 2, 3}    (says {2} is a SUBSET)
 ✓ Right:  2 ∈ {1, 2, 3}      (says 2 is IN the set)
@@ -333,7 +337,7 @@ Predicate:         "x < 5 and x > 0"
 
 ### Mistake 2: Thinking Difference is Commutative
 
-```
+```text
 ✗ Wrong: A \ B = B \ A always
 ✓ Right: A \ B ≠ B \ A in general
 
@@ -344,14 +348,14 @@ A \ B = {1, 2}  ≠  {4} = B \ A
 
 ### Mistake 3: Forgetting Duplicates in Sets
 
-```
+```text
 ✗ Wrong: {1, 2, 2, 3} is a valid set listing
 ✓ Right: {1, 2, 2, 3} = {1, 2, 3}  (duplicates removed)
 ```
 
 ### Mistake 4: Confusing Codomain and Image
 
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16}
 f(x) = x²
 
@@ -362,14 +366,14 @@ f(x) = x²
 
 ### Mistake 5: Missing Negative Numbers in Comprehension
 
-```
+```text
 ✗ Wrong: {x | x² < 10} = {0, 1, 2, 3}  (forgot negatives)
 ✓ Right: {x | x² < 10} = {-3, -2, -1, 0, 1, 2, 3}
 ```
 
 ### Mistake 6: Assuming All Functions are Bijective
 
-```
+```text
 ✗ Wrong: All functions have inverses
 ✓ Right: Only bijective functions have inverses
 

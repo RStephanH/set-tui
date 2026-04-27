@@ -9,10 +9,14 @@
 3. [Exercices pratiques](#exercices-pratiques)
 4. [Conseils pour réussir](#conseils-pour-réussir)
 5. [Erreurs courantes](#erreurs-courantes)
+6. [Stratégie de pratique](#stratégie-de-pratique)
+7. [Ressources supplémentaires](#ressources-supplémentaires)
 
 ---
 
 ## Démarrage
+
+Dans ce document, nous utilisons la convention **ℕ = {0, 1, 2, 3, ...}**.
 
 ### Ce que vous apprendrez
 
@@ -51,7 +55,7 @@ Set-TUI vous aide à comprendre:
 4. Relations de sous-ensemble
 
 **Pratique:**
-```
+```text
 Créer des ensembles: A = {1, 2, 3}, B = {3, 4, 5}
 Calculer:
   - A ∪ B (devrait être {1, 2, 3, 4, 5})
@@ -77,7 +81,7 @@ Calculer:
 5. Compréhension d'ensembles
 
 **Pratique:**
-```
+```text
 Créer l'univers: U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 Créer des ensembles: A = {2, 4, 6, 8}, B = {1, 3, 5, 7, 9}
 
@@ -106,7 +110,7 @@ Calculer:
 6. Composition et fonctions inverses
 
 **Pratique:**
-```
+```text
 Définir une fonction: f(x) = 2x sur le domaine {1, 2, 3}
 
 Analyser:
@@ -133,7 +137,7 @@ Analyser:
 ### Niveau 1: Fondements
 
 **Exercice 1.1:** Notation des ensembles
-```
+```text
 Écrivez les ensembles suivants sous forme explicite (énumération):
 a) {x ∈ ℕ | x < 5}
 b) {x ∈ ℤ | -2 < x < 3}
@@ -146,7 +150,7 @@ c) {2, 4, 6, 8, 10}
 ```
 
 **Exercice 1.2:** Opérations de base
-```
+```text
 Soit A = {a, b, c}, B = {b, c, d}, C = {c, d, e}
 
 Calculer:
@@ -158,7 +162,7 @@ e) (A ∪ B) ∩ C = {c, d}
 ```
 
 **Exercice 1.3:** Sous-ensembles
-```
+```text
 Le premier ensemble est-il un sous-ensemble du second?
 a) {1, 2} ⊆ {1, 2, 3}?          Oui
 b) {1, 2, 4} ⊆ {1, 2, 3}?       Non
@@ -172,7 +176,7 @@ e) {1, 2, 3} ⊂ {1, 2, 3}?       Non (pas strict)
 ### Niveau 2: Intermédiaire
 
 **Exercice 2.1:** Produit cartésien
-```
+```text
 Soit A = {1, 2}, B = {a, b}
 
 a) A × B = {(1,a), (1,b), (2,a), (2,b)}
@@ -182,7 +186,7 @@ d) A × B = B × A? Non
 ```
 
 **Exercice 2.2:** Ensembles des parties
-```
+```text
 Trouvez P(A) pour A = {1, 2}
 
 P(A) = {∅, {1}, {2}, {1,2}}
@@ -194,7 +198,7 @@ Trouvez P(B) pour B = {a, b, c}
 ```
 
 **Exercice 2.3:** Compréhension d'ensembles
-```
+```text
 Construisez les ensembles suivants par compréhension:
 
 a) Tous les entiers pairs de 1 à 20
@@ -215,7 +219,7 @@ c) Tous les multiples de 3 jusqu'à 30
 ### Niveau 3: Fonctions
 
 **Exercice 3.1:** Analyse de fonctions
-```
+```text
 Soit f: {1, 2, 3} → {1, 2, 3, 4}
      f(1) = 2, f(2) = 4, f(3) = 3
 
@@ -228,7 +232,7 @@ f) f est-elle bijective? Non (pas surjective)
 ```
 
 **Exercice 3.2:** Formules de fonctions
-```
+```text
 Soit f: ℝ → ℝ, f(x) = 2x + 1
 
 a) f(0) = 1
@@ -245,7 +249,7 @@ e) f est-elle bijective?
 ```
 
 **Exercice 3.3:** Image et préimage
-```
+```text
 Soit f: ℝ → ℝ, f(x) = x²
 
 a) Trouvez f({-2, -1, 1, 2})
@@ -268,7 +272,7 @@ d) Quelle est l'image de f?
 ### 1. **Commencer petit**
 Commencez par des petits ensembles concrets avant de passer à des ensembles abstraits.
 
-```
+```text
 ✓ Bon:   A = {1, 2, 3}
 ✗ Éviter: A = {tous les entiers positifs divisibles par 7}
 ```
@@ -276,7 +280,7 @@ Commencez par des petits ensembles concrets avant de passer à des ensembles abs
 ### 2. **Utiliser la visualisation**
 Dessinez des diagrammes de Venn pour visualiser les ensembles et les opérations.
 
-```
+```text
      A         B
     ┌──┐     ┌──┐
     │ 1│     │ 3│
@@ -288,7 +292,7 @@ Dessinez des diagrammes de Venn pour visualiser les ensembles et les opérations
 ### 3. **Vérifier vos réponses**
 Vérifiez toujours les résultats à la main.
 
-```
+```text
 A = {1, 2, 3}, B = {3, 4}
 A ∪ B = {1, 2, 3, 4}
 Vérification: 1 est dans A∪B? Oui (dans A) ✓
@@ -300,7 +304,7 @@ Vérification: 1 est dans A∪B? Oui (dans A) ✓
 ### 4. **Comprendre le "pourquoi"**
 Ne calculez pas juste—comprenez le raisonnement derrière les opérations.
 
-```
+```text
 Pourquoi {1, 2} ⊆ {1, 2, 3}?
 Parce que chaque élément de {1, 2} est aussi dans {1, 2, 3}.
 C'est ce que dit la définition de sous-ensemble.
@@ -312,7 +316,7 @@ Utilisez l'application pour vérifier vos calculs manuels.
 ### 6. **Travailler avec plusieurs représentations**
 Voyez les ensembles sous différentes formes:
 
-```
+```text
 Forme explicite:     {1, 2, 3, 4}
 Notation en compréhension: {x ∈ ℕ | x < 5}
 Intervalle:          [1, 5) ∩ ℕ
@@ -325,7 +329,7 @@ Prédicat:            "x < 5 and x > 0"
 
 ### Erreur 1: Confondre sous-ensemble et élément
 
-```
+```text
 ✗ Faux:  {2} ∈ {1, 2, 3}    (dit 2 est DANS l'ensemble)
 ✓ Juste: {2} ⊆ {1, 2, 3}    (dit {2} est un SOUS-ENSEMBLE)
 ✓ Juste: 2 ∈ {1, 2, 3}      (dit 2 est DANS l'ensemble)
@@ -333,7 +337,7 @@ Prédicat:            "x < 5 and x > 0"
 
 ### Erreur 2: Penser que la différence est commutative
 
-```
+```text
 ✗ Faux: A \ B = B \ A toujours
 ✓ Juste: A \ B ≠ B \ A en général
 
@@ -344,14 +348,14 @@ A \ B = {1, 2}  ≠  {4} = B \ A
 
 ### Erreur 3: Oublier les doublons dans les ensembles
 
-```
+```text
 ✗ Faux: {1, 2, 2, 3} est une énumération d'ensemble valide
 ✓ Juste: {1, 2, 2, 3} = {1, 2, 3}  (doublons supprimés)
 ```
 
 ### Erreur 4: Confondre codomaine et image
 
-```
+```text
 f: {1, 2, 3} → {1, 4, 9, 16}
 f(x) = x²
 
@@ -362,14 +366,14 @@ f(x) = x²
 
 ### Erreur 5: Oublier les nombres négatifs dans la compréhension
 
-```
+```text
 ✗ Faux: {x | x² < 10} = {0, 1, 2, 3}  (oublié les négatifs)
 ✓ Juste: {x | x² < 10} = {-3, -2, -1, 0, 1, 2, 3}
 ```
 
 ### Erreur 6: Supposer que toutes les fonctions sont bijectives
 
-```
+```text
 ✗ Faux: Toutes les fonctions ont des inverses
 ✓ Juste: Seules les fonctions bijectives ont des inverses
 
