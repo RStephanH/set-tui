@@ -69,7 +69,7 @@ This launches the interactive TUI where you can:
 
 ## 📂 Project Structure
 
-```
+```text
 set-tui/
 ├── main.py                 # Entry point
 ├── pyproject.toml         # Project configuration & dependencies
@@ -98,6 +98,8 @@ set-tui/
 ## 🧮 Mathematical Concepts
 
 Set-TUI implements core concepts from discrete mathematics and set theory:
+
+In this documentation, we use the convention **ℕ = {0, 1, 2, 3, ...}**.
 
 ### Set Operations
 - **Union** (A ∪ B): All elements in A or B
@@ -143,8 +145,11 @@ difference(A, B)         # {1, 2}
 from core.operations import build_function, is_injective, is_bijective
 
 f = build_function({1, 2, 3}, "x ** 2")  # f(x) = x²
-is_injective(f)
-is_bijective(f, {1, 4, 9})
+injective_result, injective_msg = is_injective(f)
+print(injective_result, injective_msg)
+
+bijective_result, bijective_msg = is_bijective(f, {1, 4, 9})
+print(bijective_result, bijective_msg)
 ```
 
 ### Set Comprehension
