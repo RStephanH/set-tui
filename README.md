@@ -2,6 +2,8 @@
 
 **A Terminal User Interface for Interactive Set Theory & Mathematical Learning**
 
+![Set-TUI first look](assets/firstlook.svg)
+
 Set-TUI is an educational mathematics application designed to teach and practice **set theory**, **functions**, and **discrete mathematics concepts** through an interactive terminal-based interface. It's built with Python and leverages the Textual framework for a rich TUI experience.
 
 ## 📋 Table of Contents
@@ -75,6 +77,8 @@ set-tui/
 ├── pyproject.toml         # Project configuration & dependencies
 ├── data.json              # Persistent storage (sets & history)
 ├── README.md              # This file
+├── assets/
+│   └── firstlook.svg      # First look preview image
 ├── core/
 │   ├── models.py          # Data models (not yet implemented)
 │   └── operations.py      # All set theory & function operations
