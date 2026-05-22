@@ -30,6 +30,7 @@ from core.operations import (
     symmetric_difference,
     cartesian_product,
     cardinality,
+    power_set,
     build_set_by_comprehension,
     build_universe,
     build_function,
@@ -62,7 +63,8 @@ THEORY = {
         "  A \\ B  : différence    → éléments dans A mais PAS dans B\n"
         "  A △ B  : diff. sym.    → (A\\B) ∪ (B\\A)\n"
         "  A × B  : produit cart. → toutes les paires (a, b)\n"
-        "  |A|    : cardinalité   → nombre d'éléments de A"
+        "  |A|    : cardinalité   → nombre d'éléments de A\n"
+        "  P(A)   : ensemble des parties → tous les sous-ensembles de A"
     ),
     "comp": (
         "Rappel  —  Ensemble par compréhension\n"
@@ -193,6 +195,7 @@ class SetApp(App):
                     with Horizontal(classes="btn-row"):
                         yield Button("A × B", id="ops-prod")
                         yield Button("|A|", id="ops-card")
+                        yield Button("P(A)", id="ops-powerset", disabled=True)
 
                     yield Static(
                         "Le résultat apparaîtra ici", id="ops-result", classes="result"
@@ -325,10 +328,11 @@ class SetApp(App):
         self._init_hist_table()
         self._init_sets_table()
 
-    # Textual déclenche on_mount une seule fois, on initialise ici
+        # Textual déclenche on_mount une seule fois, on initialise ici
     def on_ready(self) -> None:
         self._init_hist_table()
         self._init_sets_table()
+        self._update_power_set_button()
 
     def _init_hist_table(self) -> None:
         t = self.query_one("#hist-table", DataTable)
@@ -371,6 +375,18 @@ class SetApp(App):
             elements = self.data["sets"][name]
             t.add_row(name, str(elements), str(len(elements)))
 
+    def on_input_changed(self, event: Input.Changed) -> None:
+        if event.input.id in {"ops-A", "ops-B"}:
+            self._update_power_set_button()
+
+    def _update_power_set_button(self) -> None:
+        # Active P(A) uniquement si un seul champ (A ou B) est renseigné.
+        raw_a = self.query_one("#ops-A", Input).value.strip()
+        raw_b = self.query_one("#ops-B", Input).value.strip()
+        self.query_one("#ops-powerset", Button).disabled = not (
+            bool(raw_a) ^ bool(raw_b)
+        )
+
     # ── Gestion des boutons ────────────────────────────────
     def on_button_pressed(self, event: Button.Pressed) -> None:
         btn = event.button.id
@@ -396,6 +412,7 @@ class SetApp(App):
             "ops-symdiff",
             "ops-prod",
             "ops-card",
+            "ops-powerset",
         }
         if btn in OPS:
             self._handle_ops(btn)
@@ -422,6 +439,25 @@ class SetApp(App):
         try:
             raw_a = self.query_one("#ops-A", Input).value.strip()
             raw_b = self.query_one("#ops-B", Input).value.strip()
+
+            if btn == "ops-powerset":
+                if bool(raw_a) == bool(raw_b):
+                    raise ValueError("Entrez un seul ensemble : A ou B.")
+                target_raw = raw_a if raw_a else raw_b
+                target_set = parse_input(target_raw)
+                res = power_set(target_set)
+                res_display = [sorted(subset) for subset in res]
+                a_display = sorted(target_set) if raw_a else "—"
+                b_display = sorted(target_set) if raw_b else "—"
+                result_widget.update(
+                    f"A = {a_display}\n"
+                    f"B = {b_display}\n"
+                    f"Résultat  (powerset) : {res_display}"
+                )
+                add_entry(self.data, "powerset", target_set, None, res_display)
+                self._refresh_hist_table()
+                self.notify("✅ Opération réussie")
+                return
 
             if not raw_a:
                 raise ValueError("L'ensemble A est vide.")
